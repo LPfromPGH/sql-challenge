@@ -1,0 +1,45 @@
+#Here we go
+
+titles as TIT
+----
+title_id PK varchar(5) FK
+title varchar(50)
+
+employee as EMP
+----
+emp_no int PK FK
+emp_title varchar(5) FK >- titles.title_id
+birth_date dateTime
+first_name varchar(50)
+last_name varchar(50)
+sex varchar(2)
+hire_date dateTime
+----
+
+Departments as D
+----
+dept_no varchar(5) PK
+department varchar(50)
+----
+
+DepartmentMan as DM
+----
+dept_no varchar(5) FK >- Departments.dept_no
+emp_no int unique FK >- employee.emp_no
+----
+
+DepartmentEmp as DE
+----
+emp_no int unique FK >- employee.emp_no
+dept_no varchar(5) FK >- Departments.dept_no
+-----
+
+
+salaries as SAL
+----
+emp_no int unique FK >- EMP.emp_no
+salary int
+
+
+
+
